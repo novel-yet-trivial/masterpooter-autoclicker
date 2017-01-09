@@ -12,3 +12,5 @@ chmod +x ~/Desktop/autoclick.pyw
 ```
 
 This puts a file on your desktop called 'autoclick.pyw'. You can doubleclick it to run it. 
+
+![Screenshot](screenshot.png)
