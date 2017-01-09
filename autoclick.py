@@ -13,9 +13,17 @@
 # before running this program, run:
 # $ sudo apt-get install -y python-xlib python-tk
 
+''' Test program:
+import Tkinter as tk
+root = tk.Tk()
+var = tk.IntVar()
+inc = lambda: var.set(var.get()+1)
+tk.Label(textvariable=var).pack()
+tk.Button(text='Click me', command=inc).pack()
+'''
 
 from Xlib.display import Display
-from Xlib import X, XK
+from Xlib import X
 from Xlib.ext.xtest import fake_input
 import Tkinter as tk
 import random
@@ -40,7 +48,6 @@ class GUI(tk.Frame):
         self.pos = None
         self.last = 0
 
-
         lbl = tk.Label(self, text="Delay")
         lbl.grid(row=0, column=0, sticky='w')
         self.delay = tk.IntVar(self, 2000)
@@ -59,7 +66,7 @@ class GUI(tk.Frame):
         ent = tk.Entry(self, textvariable=self.rand, width=8)
         ent.grid(row=2, column=1)
 
-        self.status = tk.Label(self, text='ready')
+        self.status = tk.Label(self, text='Ready')
         self.status.grid(row=3, column=0, columnspan=2)
 
         self.button = tk.Button(self, text=START, command=self.toggle)
